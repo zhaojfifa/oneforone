@@ -3,17 +3,5 @@ services:
     name: ai-service
     env: docker
     plan: free
-    autoDeploy: true
     healthCheckPath: /health
-    # 环境变量在 Render 控制台填写（sync:false 表示不从 repo 同步）
-    envVars:
-      - key: USER_TOKEN_A
-        sync: false
-      - key: USER_TOKEN_B
-        sync: false
-      - key: USER_TOKEN_C
-        sync: false
-      - key: SERVICE_NAME
-        sync: false
-      - key: AI_API_KEY
-        sync: false
+    autoDeploy: true
