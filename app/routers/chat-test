@@ -1,0 +1,7 @@
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/chat-test")
+def chat_test(prompt: str):
+    return {"answer": f"你输入了: {prompt}"}
