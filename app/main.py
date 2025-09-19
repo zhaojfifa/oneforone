@@ -1,11 +1,9 @@
 from fastapi import FastAPI
-from .routers.chat import router as chat_router
+from .routers import chat
 
 app = FastAPI(title="My AI Service")
+app.include_router(chat.router)
 
 @app.get("/health")
-async def health():
+def health():
     return {"status": "ok"}
-
-app.include_router(chat_router)
-
